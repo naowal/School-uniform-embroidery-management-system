@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'Studentemb_studentembinfo_list' %}">StudentEmbInfo Listing</a></p>
+<table class="table">
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>firstname</td><td>{{ object.firstname }}</td></tr>
+<tr><td>lastname</td><td>{{ object.lastname }}</td></tr>
+<tr><td>schoolname</td><td>{{ object.schoolname }}</td></tr>
+<tr><td>moreinfo</td><td>{{ object.moreinfo }}</td></tr>
+<tr><td>status</td><td>{{ object.status }}</td></tr>
+<tr><td>color</td><td>{{ object.color }}</td></tr>
+<tr><td>create_by</td><td>{{ object.create_by }}</td></tr>
+<tr><td>price_baht</td><td>{{ object.price_baht }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit StudentEmbInfo</a>
+
+{% endblock %}

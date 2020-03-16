@@ -4,11 +4,13 @@ from __future__ import absolute_import, print_function, unicode_literals
 from cms.sitemaps import CMSSitemap
 from django.conf import settings
 from django.conf.urls import include, url
+from django.urls import path
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
+
 
 admin.autodiscover()
 
@@ -20,6 +22,8 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),  # NOQA
     url(r'^', include('cms.urls')),
+    url(r'^polls/', include('polls.urls')),
+
 )
 
 # This is only needed when using runserver.
